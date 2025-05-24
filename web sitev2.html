@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Küçükler Tarım - Premium Ceviz ve Organik Ürünler</title>
+    <meta name="description" content="Küçükler Tarım - Organik ceviz, zeytinyağı ve doğal ürünler. Aile işletmemizin kaliteli ürünlerini keşfedin.">
+    <meta name="keywords" content="organik ceviz, zeytin, zeytinyağı, doğal ürünler, Küçükler Tarım, Manisa, Gördes, Börez Köyü">
+    <style>
+        /* Genel Stiller */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url('https://image.milimaj.com/i/milliyet/75/0x410/61a9d89d86b2452238bebc4d.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(76, 108, 58, 0.9);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo span {
+            color: #f8d56b;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #f8d56b;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 5rem 1rem;
+            background-image: url('https://static.wixstatic.com/media/1153c3_497d3526789b43618a0b9765f72c1b91~mv2.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #f8d56b;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f8d56b;
+            color: #333;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e5c45a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Ürünler */
+        .products {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: #4c6c3a;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: #4c6c3a;
+        }
+        
+        .product-info p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #4c6c3a;
+            font-size: 1.2rem;
+        }
+        
+        /* Hakkımızda */
+        .about {
+            padding: 4rem 1rem;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about h2 {
+            margin-bottom: 2rem;
+        }
+        
+        /* İletişim */
+        .contact {
+            padding: 4rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+        }
+        
+        /* Google Haritalar */
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #4c6c3a;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* WhatsApp Butonu */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            line-height: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-links a {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <div class="logo">Küçükler<span>Tarım</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#anasayfa">Anasayfa</a></li>
+                    <li><a href="#urunler">Ürünler</a></li>
+                    <li><a href="#hakkimizda">Hakkımızda</a></li>
+                    <li><a href="#iletisim">İletişim</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero" id="anasayfa">
+            <div class="hero-content">
+                <h1>Küçükler Tarım Kalitesiyle Ürünlerimiz</h1>
+                <p>Aile işletmemizin özenle yetiştirdiği ürünler</p>
+                <a href="#urunler" class="btn">Ürünleri İncele</a>
+            </div>
+        </section>
+        
+        <section class="products" id="urunler">
+            <h2 class="section-title">Ürünlerimiz</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.myikas.com/images/0adec273-1398-4680-898c-5ee67d16804d/b3ea74a8-d6b7-429e-89da-a9812e7c77b1/1512/whatsapp-image-2024-04-06-at-23.webp" alt="Kabuklu Ceviz">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kabuklu Ceviz</h3>
+                        <p>Kendi bahçelerimizde yetiştirilen taze kabuklu cevizler</p>
+                        <p class="price">₺180.00/kg</p>
+                        <a href="#" class="btn">Sepete Ekle</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.dsmcdn.com/ty698/product/media/images/20230121/13/262645773/729210809/1/1_org_zoom.jpg" alt="İç Ceviz">
+                    </div>
+                    <div class="product-info">
+                        <h3>İç Ceviz</h3>
+                        <p>Elle ayıklanmış iç ceviz, vakumlu paketlerde</p>
+                        <p class="price">₺400.00/kg</p>
+                        <a href="#" class="btn">Sepete Ekle</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://fikirturu.com/storage/2024/09/IMG_9570-1024x788.jpeg" alt="Zeytinyağı">
+                    </div>
+                    <div class="product-info">
+                        <h3>Doğal Zeytinyağı</h3>
+                        <p>Doğal güvenilir organik zeytinyağı</p>
+                        <p class="price">₺250.00/litre</p>
+                        <a href="#" class="btn">Sepete Ekle</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://panayirgourmet.com/cdn/shop/files/bodrum-yesil-zeytin-kirma-945953_800x.jpg?v=1718700739" alt="Yeşil Zeytin">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sofralık Yeşil Zeytin</h3>
+                        <p>Doğal, organik yeşil sofralık zeytin</p>
+                        <p class="price">₺200.00/kg</p>
+                        <a href="#" class="btn">Sepete Ekle</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://hizliservis.mado.com.tr/mado-sofralik-dogal-yagli-siyah-zeytin-1000-gr-yoresel-urunler-mado-1037-32-O.jpg" alt="Siyah Zeytin">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sofralık Siyah Zeytin</h3>
+                        <p>Organik doğal siyah zeytin</p>
+                        <p class="price">₺200.00/kg</p>
+                        <a href="#" class="btn">Sepete Ekle</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.cimri.io/market/260x260/coffeebek-500-gr-yalova-kabuklu-ceviz-_1847082.jpg" alt="Organik Ceviz">
+                    </div>
+                    <div class="product-info">
+                        <h3>Organik Ceviz</h3>
+                        <p>Tamamen organik sertifikalı cevizler</p>
+                        <p class="price">₺200.00/kg</p>
+                        <a href="#" class="btn">Sepete Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about" id="hakkimizda">
+            <div class="about-content">
+                <h2 class="section-title">Hakkımızda</h2>
+                <p>Küçükler Tarım ailesi olarak, Manisa Gördes Börez Köyü'nde nesillerdir tarım ve ceviz yetiştiriciliği yapmaktayız. Aile geleneğimizi sürdürerek, en kaliteli cevizleri sizlere sunmaktan gurur duyuyoruz.</p>
+                <p>Ürünlerimiz tamamen doğal yöntemlerle yetiştirilmekte ve titizlikle paketlenmektedir. Müşteri memnuniyeti bizim için en önemli önceliktir.</p>
+            </div>
+        </section>
+        
+        <section class="contact" id="iletisim">
+            <h2 class="section-title">İletişim</h2>
+            <form class="contact-form" action="https://formspree.io/f/kucuklerceviz@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Adınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                <input type="tel" name="phone" placeholder="Telefon Numaranız">
+                <textarea name="message" placeholder="Mesajınız" required></textarea>
+                <button type="submit" class="btn">Gönder</button>
+            </form>
+            
+            <!-- Google Haritalar - Manisa Gördes Börez Köyü -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.715947040887!2d28.029812315364153!3d39.39567997950048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b63f6a6c4b9a9f%3A0x6d8273a8f3a4b1b8!2sB%C3%B6rez%20K%C3%B6y%C3%BC%2C%2045740%20G%C3%B6rdes%2FManisa!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            
+            <!-- Adres Bilgisi -->
+            <div style="text-align: center; margin-top: 1.5rem; background-color: #f5f5f5; padding: 1rem; border-radius: 8px;">
+                <h3 style="color: #4c6c3a; margin-bottom: 0.5rem;">Adresimiz</h3>
+                <p>Börez Köyü, Gördes, Manisa</p>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-links">
+                <a href="#anasayfa">Anasayfa</a>
+                <a href="#urunler">Ürünler</a>
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#iletisim">İletişim</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/sayfaniz" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sayfaniz" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/905539728540" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2023 Küçükler Tarım - Tüm Hakları Saklıdır</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                <a href="mailto:kucuklerceviz@gmail.com" style="color: white;">kucuklerceviz@gmail.com</a> | 
+                <a href="tel:+905539728540" style="color: white;">0553 972 85 40</a> |
+                <span>Börez Köyü, Gördes, Manisa</span>
+            </p>
+        </footer>
+        
+        <!-- WhatsApp Butonu -->
+        <a href="https://wa.me/905539728540" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
